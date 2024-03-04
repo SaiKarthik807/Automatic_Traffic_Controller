@@ -1,0 +1,61 @@
+<h1>Automatic Traffic Controller</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 3px solid black;
+            border-radius: 20px;
+            width: 100px;
+            height: 310px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .shape {
+            border: 2px solid black;
+            margin: 10px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .container {
+            box-shadow: 4px 4px 4px 4px rgb(232, 230, 230), 4px 4px 4px 4px rgb(103, 105, 103);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="green shape"><h2>&nbsp;&nbsp;&nbsp;GO</h2></div>
+        <div class="yellow shape"><h2>&nbsp;&nbsp;&nbsp;SET</h2></div>
+        <div class="red shape"><h2>&nbsp;&nbsp;STOP</h2></div>
+    </div>
+    <script>
+        function color_changer () {
+            
+            document.getElementsByClassName('green')[0].style.backgroundColor = 'green';
+            setTimeout(() => {
+                document.getElementsByClassName('green')[0].style.backgroundColor = 'white';
+                document.getElementsByClassName('yellow')[0].style.backgroundColor = 'yellow';
+            }, 3000);
+            setTimeout(() => {
+                document.getElementsByClassName('yellow')[0].style.backgroundColor = 'white';
+                document.getElementsByClassName('red')[0].style.backgroundColor = 'red';
+            }, 8000);
+            document.getElementsByClassName('red')[0].style.backgroundColor = 'white';
+
+        }
+        color_changer();
+        setInterval(color_changer, 12000);
+    </script>
+</body>
+
+</html>
